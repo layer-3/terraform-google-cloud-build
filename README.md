@@ -14,6 +14,7 @@ This Terraform module creates Google Cloud Build triggers for a specified GitHub
   - `sa`: The service account to use for the trigger.
   - `ignored_files`: List of file globs to ignore for the trigger.
   - `included_files`: List of file globs to include for the trigger.
+  - `substitutions`: Map of substitutions to apply to the trigger (Optional).
   - `event`: The type of trigger (`push`, `tag` or `pull_request`).
   - `regex`: The pattern to match for triggering builds (branch on `push`, tag on `tag`, base branch on `pull_request`).
   - `invert_regex`: Whether to invert the regex pattern.

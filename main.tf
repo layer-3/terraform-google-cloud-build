@@ -11,6 +11,8 @@ resource "google_cloudbuild_trigger" "triggers" {
   ignored_files  = var.triggers[count.index].ignored_files
   included_files = var.triggers[count.index].included_files
 
+  substitutions = var.triggers[count.index].substitutions
+  
   github {
     owner = var.owner
     name  = var.repository

@@ -32,6 +32,7 @@ The triggers to create. Each trigger should be defined with the following attrib
 - `sa` (string): Service account to use for the trigger.
 - `ignored_files` (list(string)): List of files to ignore.
 - `included_files` (list(string)): List of files to include.
+- `substitutions` (map(string)): Substitutions to use for the trigger.
 - `event` (string): The event type that triggers the build (e.g., 'push', 'pull_request').
 - `regex` (string): A regex pattern to filter the branches or tags.
 - `invert_regex` (bool): If true, the regex pattern is inverted.
@@ -44,6 +45,7 @@ EOT
     sa              = string
     ignored_files   = list(string)
     included_files  = list(string)
+    substitutions   = optional(map(string))
     event           = string
     regex           = string
     invert_regex    = bool
