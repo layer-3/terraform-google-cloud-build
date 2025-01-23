@@ -3,7 +3,7 @@ resource "google_cloudbuild_trigger" "triggers" {
 
   location = var.location
   name     = "${var.repository}-${var.triggers[count.index].name}"
-  filename = "ci/pipelines/${var.triggers[count.index].name}.yaml"
+  filename = var.triggers[count.index].custom_filename != null ? var.triggers[count.index].custom_filename : "ci/pipelines/${var.triggers[count.index].name}.yaml"
   tags     = var.triggers[count.index].tags
 
   service_account = "projects/${var.project_id}/serviceAccounts/${var.triggers[count.index].sa}@${var.project_id}.iam.gserviceaccount.com"

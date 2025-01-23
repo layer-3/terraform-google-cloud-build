@@ -9,6 +9,7 @@ This Terraform module creates Google Cloud Build triggers for a specified GitHub
 - `repository`: The name of the GitHub repository.
 - `triggers`: List of trigger configurations. Each configuration is an object with the following attributes:
   - `name`: The name of the Cloud Build trigger.
+  - `custom_filename`: The custom name of the pipeline file to use for the trigger (Optional).
   - `tags`: List of tags to apply to the trigger.
   - `sa`: The service account to use for the trigger.
   - `ignored_files`: List of file globs to ignore for the trigger.

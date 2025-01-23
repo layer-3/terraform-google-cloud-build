@@ -27,6 +27,7 @@ variable "triggers" {
 The triggers to create. Each trigger should be defined with the following attributes:
 
 - `name` (string): The name of the trigger.
+- `custom_filename` (string): The custom filename to use for the trigger.
 - `tags` (list(string)): Tags to associate with the trigger.
 - `sa` (string): Service account to use for the trigger.
 - `ignored_files` (list(string)): List of files to ignore.
@@ -38,6 +39,7 @@ The triggers to create. Each trigger should be defined with the following attrib
 EOT
   type = list(object({
     name            = string
+    custom_filename = optional(string)
     tags            = list(string)
     sa              = string
     ignored_files   = list(string)
